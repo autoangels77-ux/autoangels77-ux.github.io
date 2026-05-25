@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auto Angels | Vehicle Concierge Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f1f4;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      background: #000;
+      color: #fff;
+      padding: 80px 0;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-image {
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+    }
+
+    .logo {
+      width: 320px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 58px;
+      line-height: 1.05;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    .pink {
+      color: #d38dbd;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #ccc;
+      margin-bottom: 35px;
+      max-width: 600px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 16px 30px;
+      border-radius: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: #d38dbd;
+      color: #000;
+    }
+
+    .btn-secondary {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .hero-photo {
+      width: 100%;
+      border-radius: 30px;
+      object-fit: cover;
+      height: 550px;
+    }
+
+    .info-card {
+      position: absolute;
+      bottom: -25px;
+      left: -20px;
+      background: #111;
+      border: 1px solid rgba(211,141,189,0.4);
+      padding: 25px;
+      border-radius: 24px;
+      max-width: 320px;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title h2 {
+      font-size: 46px;
+      margin-bottom: 10px;
+      font-weight: 900;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 35px;
+      border-radius: 28px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .card-number {
+      color: #d38dbd;
+      font-size: 48px;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .dark-section {
+      background: #000;
+      color: #fff;
+    }
+
+    .dark-card {
+      background: #151515;
+      border: 1px solid #222;
+      color: #fff;
+    }
+
+    .service-area {
+      background: #f3d9e8;
+    }
+
+    .service-box {
+      background: #fff;
+      padding: 60px;
+      border-radius: 35px;
+      text-align: center;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 40px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    @media(max-width: 768px) {
+      h1 {
+        font-size: 42px;
+      }
+
+      .logo {
+        width: 240px;
+      }
+
+      .info-card {
+        position: relative;
+        left: 0;
+        bottom: 0;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="hero-text">
+        <img src="Auto-Angels-Horizonal-White.png" alt="Auto Angels Logo" class="logo">
+
+        <h1>
+          Too Busy To Handle <span class="pink">Vehicle Maintenance?</span>
+        </h1>
+
+        <p>
+          Auto Angels is a trusted vehicle concierge service designed exclusively for busy professional women in Sri Lanka.
+        </p>
+
+        <div class="buttons">
+          <a href="https://wa.me/94777495554" class="btn btn-primary">Book via WhatsApp</a>
+          <a href="tel:0777495554" class="btn btn-secondary">Call 077 749 5554</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200&auto=format&fit=crop" alt="Professional woman with car" class="hero-photo">
+
+        <div class="info-card">
+          <h3 style="color:#d38dbd; margin-bottom:10px;">We Speak Fluent Mechanic.</h3>
+          <p style="color:#ccc;">
+            No confusing garage jargon. We help you understand exactly what your vehicle needs.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>How It Works</h2>
+        <p>Simple. Safe. Hassle-free.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-number">1</div>
+          <h3>We Pick Up</h3>
+          <p>We collect your vehicle from your home or workplace at a convenient time.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">2</div>
+          <h3>We Handle Everything</h3>
+          <p>We coordinate servicing and repairs with your preferred garage or our trusted partner garages.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">3</div>
+          <h3>We Return It Safely</h3>
+          <p>Your vehicle is returned back to you safely and conveniently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why Auto Angels?</h2>
+        <p>Built around trust, convenience and peace of mind.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card dark-card">
+          <h3>Door-to-Door Service</h3>
+          <p>No time wasted sitting at garages or workshops.</p>
+        </div>
+
+        <div class="card dark-card">
+          <h3>Trusted Garages</h3>
+          <p>Use your preferred garage or our carefully selected partners.</p>
+        </div>
+
+        <div class="card dark-card">
+          <h3>Saves You Time</h3>
+          <p>Perfect for professionals with busy schedules.</p>
+        </div>
+
+        <div class="card dark-card">
+          <h3>Clear Communication</h3>
+          <p>We explain everything in simple language you can understand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-area">
+    <div class="container">
+      <div class="service-box">
+        <h2>Currently Serving Colombo</h2>
+
+        <p>
+          Auto Angels currently operates within the Colombo area. More locations and operating days coming soon.
+        </p>
+
+        <div class="buttons" style="justify-content:center;">
+          <a href="https://wa.me/94777495554" class="btn btn-primary">WhatsApp Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h3>AUTO ANGELS</h3>
+        <p>Vehicle concierge service for busy professional women.</p>
+      </div>
+
+      <div>
+        <h3>077 749 5554</h3>
+        <p>Colombo, Sri Lanka</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
