@@ -1,338 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Auto Angels | Vehicle Concierge Service</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<title>autoangels.lk | Vehicle Concierge Services</title>
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f5f1f4;
-      color: #111;
-      line-height: 1.6;
-    }
+<meta name="description" content="Auto Angels is a Sri Lankan vehicle concierge service helping busy professionals manage repairs, servicing, inspections and automotive coordination with ease." />
 
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-    }
+<link rel="icon" type="image/png" href="favicon.png">
 
-    .hero {
-      background: #000;
-      color: #fff;
-      padding: 80px 0;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .hero-content {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-      flex-wrap: wrap;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    .hero-text {
-      flex: 1;
-      min-width: 300px;
-    }
+<style>
 
-    .hero-image {
-      flex: 1;
-      min-width: 300px;
-      position: relative;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
 
-    .logo {
-      width: 320px;
-      margin-bottom: 30px;
-    }
+body{
+font-family:'Inter',sans-serif;
+background:#000;
+color:#fff;
+overflow-x:hidden;
+}
 
-    h1 {
-      font-size: 58px;
-      line-height: 1.05;
-      font-weight: 900;
-      margin-bottom: 25px;
-    }
+.container{
+width:90%;
+max-width:1400px;
+margin:auto;
+}
 
-    .pink {
-      color: #d38dbd;
-    }
+a{
+text-decoration:none;
+}
 
-    .hero p {
-      font-size: 20px;
-      color: #ccc;
-      margin-bottom: 35px;
-      max-width: 600px;
-    }
+img{
+max-width:100%;
+display:block;
+}
 
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
+/* NAVBAR */
 
-    .btn {
-      padding: 16px 30px;
-      border-radius: 14px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: 0.3s ease;
-      display: inline-block;
-    }
+.navbar{
+position:sticky;
+top:0;
+z-index:999;
+background:#000;
+border-bottom:1px solid rgba(255,255,255,0.08);
+}
 
-    .btn-primary {
-      background: #d38dbd;
-      color: #000;
-    }
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 0;
+}
 
-    .btn-secondary {
-      border: 2px solid #fff;
-      color: #fff;
-    }
+.nav-logo{
+width:260px;
+}
 
-    .hero-photo {
-      width: 100%;
-      border-radius: 30px;
-      object-fit: cover;
-      height: 550px;
-    }
+.hamburger{
+width:42px;
+height:32px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+cursor:pointer;
+}
 
-    .info-card {
-      position: absolute;
-      bottom: -25px;
-      left: -20px;
-      background: #111;
-      border: 1px solid rgba(211,141,189,0.4);
-      padding: 25px;
-      border-radius: 24px;
-      max-width: 320px;
-    }
+.hamburger span{
+height:4px;
+background:#fff;
+border-radius:10px;
+transition:0.3s;
+}
 
-    section {
-      padding: 90px 0;
-    }
+/* MENU */
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 60px;
-    }
+.menu-overlay{
+position:fixed;
+top:0;
+right:-100%;
+width:100%;
+height:100vh;
+background:#000;
+z-index:1000;
+padding:120px 30px 60px;
+overflow-y:auto;
+transition:0.4s ease;
+}
 
-    .section-title h2 {
-      font-size: 46px;
-      margin-bottom: 10px;
-      font-weight: 900;
-    }
+.menu-overlay.active{
+right:0;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
+.close-menu{
+position:absolute;
+top:30px;
+right:40px;
+font-size:50px;
+cursor:pointer;
+color:#fff;
+}
 
-    .card {
-      background: #fff;
-      padding: 35px;
-      border-radius: 28px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-    }
+.menu-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+max-width:1300px;
+margin:auto;
+}
 
-    .card-number {
-      color: #d38dbd;
-      font-size: 48px;
-      font-weight: 900;
-      margin-bottom: 15px;
-    }
+.menu-card{
+background:#0d0d0d;
+border:1px solid rgba(255,255,255,0.08);
+padding:35px;
+border-radius:30px;
+}
 
-    .dark-section {
-      background: #000;
-      color: #fff;
-    }
+.menu-card h2{
+font-size:34px;
+color:#d38dbd;
+margin-bottom:20px;
+font-weight:800;
+}
 
-    .dark-card {
-      background: #151515;
-      border: 1px solid #222;
-      color: #fff;
-    }
+.menu-card p,
+.menu-card li{
+font-size:18px;
+line-height:1.8;
+color:#f2f2f2;
+list-style:none;
+margin-bottom:12px;
+}
 
-    .service-area {
-      background: #f3d9e8;
-    }
+.menu-card ul{
+padding-left:0;
+}
 
-    .service-box {
-      background: #fff;
-      padding: 60px;
-      border-radius: 35px;
-      text-align: center;
-    }
+/* HERO */
 
-    footer {
-      background: #000;
-      color: #fff;
-      padding: 40px 0;
-    }
+.hero{
+padding:70px 0 90px;
+}
 
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
 
-    @media(max-width: 768px) {
-      h1 {
-        font-size: 42px;
-      }
+.hero-text h1{
+font-size:84px;
+line-height:0.95;
+font-weight:900;
+margin-bottom:30px;
+}
 
-      .logo {
-        width: 240px;
-      }
+.hero-text h2{
+font-size:42px;
+line-height:1.1;
+color:#d38dbd;
+margin-bottom:25px;
+font-weight:800;
+max-width:700px;
+}
 
-      .info-card {
-        position: relative;
-        left: 0;
-        bottom: 0;
-        margin-top: 20px;
-      }
-    }
-  </style>
+.hero-text p{
+font-size:28px;
+line-height:1.5;
+color:#ddd;
+max-width:650px;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:18px 34px;
+border-radius:18px;
+font-weight:700;
+font-size:18px;
+display:inline-block;
+transition:0.3s ease;
+}
+
+.btn-primary{
+background:#d38dbd;
+color:#000;
+}
+
+.btn-secondary{
+border:2px solid #fff;
+color:#fff;
+}
+
+/* HERO SLIDER */
+
+.hero-slider{
+position:relative;
+width:100%;
+aspect-ratio:1/1;
+border-radius:40px;
+overflow:hidden;
+}
+
+.hero-slide{
+position:absolute;
+width:100%;
+height:100%;
+top:0;
+left:0;
+opacity:0;
+animation:fadeSlider 24s infinite;
+}
+
+.hero-slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-slide:nth-child(1){
+animation-delay:0s;
+}
+
+.hero-slide:nth-child(2){
+animation-delay:6s;
+}
+
+.hero-slide:nth-child(3){
+animation-delay:12s;
+}
+
+.hero-slide:nth-child(4){
+animation-delay:18s;
+}
+
+@keyframes fadeSlider{
+
+0%{
+opacity:0;
+}
+
+8%{
+opacity:1;
+}
+
+25%{
+opacity:1;
+}
+
+33%{
+opacity:0;
+}
+
+100%{
+opacity:0;
+}
+
+}
+
+/* SECTION */
+
+section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:72px;
+font-weight:900;
+margin-bottom:20px;
+}
+
+.section-title p{
+font-size:30px;
+color:#ddd;
+}
+
+/* HOW IT WORKS */
+
+.steps-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:25px;
+}
+
+.step-card{
+background:#0d0d0d;
+border:1px solid rgba(255,255,255,0.08);
+padding:35px;
+border-radius:30px;
+min-height:270px;
+}
+
+.step-card h3{
+font-size:24px;
+line-height:1.2;
+margin-bottom:20px;
+color:#d38dbd;
+}
+
+.step-card p{
+font-size:18px;
+line-height:1.7;
+color:#eee;
+}
+
+/* FOOTER */
+
+footer{
+padding:50px 0;
+border-top:1px solid rgba(255,255,255,0.08);
+text-align:center;
+}
+
+footer p{
+font-size:16px;
+color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:1200px){
+
+.hero-text h1{
+font-size:68px;
+}
+
+.section-title h2{
+font-size:56px;
+}
+
+.steps-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:900px){
+
+.hero-grid{
+grid-template-columns:1fr;
+}
+
+.hero-text h1{
+font-size:56px;
+}
+
+.hero-text h2{
+font-size:30px;
+}
+
+.hero-text p{
+font-size:22px;
+}
+
+.section-title h2{
+font-size:48px;
+}
+
+.section-title p{
+font-size:24px;
+}
+
+.steps-grid{
+grid-template-columns:1fr;
+}
+
+.nav-logo{
+width:220px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+padding:50px 0 70px;
+}
+
+.hero-text h1{
+font-size:48px;
+}
+
+.hero-text h2{
+font-size:24px;
+}
+
+.hero-text p{
+font-size:20px;
+}
+
+.btn{
+width:100%;
+text-align:center;
+}
+
+.section-title h2{
+font-size:40px;
+}
+
+.section-title p{
+font-size:20px;
+}
+
+.menu-card h2{
+font-size:28px;
+}
+
+.menu-card p,
+.menu-card li{
+font-size:16px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-  <section class="hero">
-    <div class="container hero-content">
+<!-- NAVBAR -->
 
-      <div class="hero-text">
-        <img src="Auto-Angels-Horizonal-White.png" alt="Auto Angels Logo" class="logo">
+<header class="navbar">
 
-        <h1>
-          Too Busy To Handle <span class="pink">Vehicle Maintenance?</span>
-        </h1>
+<div class="container nav-inner">
 
-        <p>
-          Auto Angels is a trusted vehicle concierge service designed exclusively for busy professional women in Sri Lanka.
-        </p>
+<img src="logo-horizontal.png" class="nav-logo" alt="autoangels.lk">
 
-        <div class="buttons">
-          <a href="https://wa.me/94777495554" class="btn btn-primary">Book via WhatsApp</a>
-          <a href="tel:0777495554" class="btn btn-secondary">Call 077 749 5554</a>
-        </div>
-      </div>
+<div class="hamburger" onclick="openMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
 
-      <div class="hero-image">
-        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1200&auto=format&fit=crop" alt="Professional woman with car" class="hero-photo">
+</div>
 
-        <div class="info-card">
-          <h3 style="color:#d38dbd; margin-bottom:10px;">We Speak Fluent Mechanic.</h3>
-          <p style="color:#ccc;">
-            No confusing garage jargon. We help you understand exactly what your vehicle needs.
-          </p>
-        </div>
-      </div>
+</header>
 
-    </div>
-  </section>
+<!-- MENU -->
 
-  <section>
-    <div class="container">
-      <div class="section-title">
-        <h2>How It Works</h2>
-        <p>Simple. Safe. Hassle-free.</p>
-      </div>
+<div class="menu-overlay" id="menuOverlay">
 
-      <div class="grid">
-        <div class="card">
-          <div class="card-number">1</div>
-          <h3>We Pick Up</h3>
-          <p>We collect your vehicle from your home or workplace at a convenient time.</p>
-        </div>
+<div class="close-menu" onclick="closeMenu()">&times;</div>
 
-        <div class="card">
-          <div class="card-number">2</div>
-          <h3>We Handle Everything</h3>
-          <p>We coordinate servicing and repairs with your preferred garage or our trusted partner garages.</p>
-        </div>
+<div class="menu-grid">
 
-        <div class="card">
-          <div class="card-number">3</div>
-          <h3>We Return It Safely</h3>
-          <p>Your vehicle is returned back to you safely and conveniently.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="menu-card">
+<h2>About Auto Angels</h2>
 
-  <section class="dark-section">
-    <div class="container">
-      <div class="section-title">
-        <h2>Why Auto Angels?</h2>
-        <p>Built around trust, convenience and peace of mind.</p>
-      </div>
+<p>
+Auto Angels is a family-owned vehicle concierge startup built around trust, convenience and peace of mind for busy professionals in Sri Lanka.
+</p>
 
-      <div class="grid">
-        <div class="card dark-card">
-          <h3>Door-to-Door Service</h3>
-          <p>No time wasted sitting at garages or workshops.</p>
-        </div>
+<p>
+Backed by over 30 years of hands-on automotive experience, we help manage everything from servicing and repairs to inspections and roadside support.
+</p>
+</div>
 
-        <div class="card dark-card">
-          <h3>Trusted Garages</h3>
-          <p>Use your preferred garage or our carefully selected partners.</p>
-        </div>
+<div class="menu-card">
+<h2>Why Customers Trust Auto Angels</h2>
 
-        <div class="card dark-card">
-          <h3>Saves You Time</h3>
-          <p>Perfect for professionals with busy schedules.</p>
-        </div>
+<ul>
+<li>Family-owned business</li>
+<li>30+ years automotive experience</li>
+<li>Transparent communication</li>
+<li>Female-friendly service experience</li>
+<li>Trusted partner workshops</li>
+<li>Real-time updates</li>
+</ul>
+</div>
 
-        <div class="card dark-card">
-          <h3>Clear Communication</h3>
-          <p>We explain everything in simple language you can understand.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="menu-card">
+<h2>Services</h2>
 
-  <section class="service-area">
-    <div class="container">
-      <div class="service-box">
-        <h2>Currently Serving Colombo</h2>
+<ul>
+<li>Mechanical repairs</li>
+<li>Accident repairs</li>
+<li>Tinkering & painting</li>
+<li>A/C repairs</li>
+<li>Wheel alignment & tyre services</li>
+<li>Audio upgrades & repairs</li>
+<li>Vehicle modifications & upgrades</li>
+<li>Detailing, PPF & colour wraps</li>
+<li>Vehicle health reports & valuations</li>
+<li>Insurance inspections</li>
+<li>Obtaining emission test certificates</li>
+<li>Vehicle transport coordination</li>
+<li>Roadside assistance after 6:00pm</li>
+</ul>
+</div>
 
-        <p>
-          Auto Angels currently operates within the Colombo area. More locations and operating days coming soon.
-        </p>
+<div class="menu-card">
+<h2>Pricing & Payments</h2>
 
-        <div class="buttons" style="justify-content:center;">
-          <a href="https://wa.me/94777495554" class="btn btn-primary">WhatsApp Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<p>
+Call-up charges are based on actual PickMe or Uber travel rates to your location, followed by a concierge service fee based on time spent managing the repair.
+</p>
 
-  <footer>
-    <div class="container footer-content">
-      <div>
-        <h3>AUTO ANGELS</h3>
-        <p>Vehicle concierge service for busy professional women.</p>
-      </div>
+<p>
+Workshop payments are settled directly by the customer via online transfer.
+</p>
 
-      <div>
-        <h3>077 749 5554</h3>
-        <p>Colombo, Sri Lanka</p>
-      </div>
-    </div>
-  </footer>
+<p>
+If repairs extend across multiple days, revisit fees may apply depending on distance and inspection requirements.
+</p>
+</div>
+
+<div class="menu-card">
+<h2>FAQs</h2>
+
+<ul>
+<li>Vehicles should have valid comprehensive insurance cover.</li>
+<li>Customers may choose their preferred workshop within Colombo and suburbs.</li>
+<li>Auto Angels fees can be paid by cash or online transfer.</li>
+<li>Repair updates can be provided via WhatsApp or video call.</li>
+</ul>
+</div>
+
+<div class="menu-card">
+<h2>Important Note</h2>
+
+<p>
+Auto Angels does not undertake spare-part sourcing or purchasing.
+</p>
+
+<p>
+Customers must ensure sufficient fuel is available in the vehicle at handover.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div class="hero-text">
+
+<h1>
+Too busy to maintain your vehicle?
+</h1>
+
+<h2>
+We handle your vehicle. You handle your day.
+</h2>
+
+<p>
+Professional vehicle concierge services for busy women in Colombo.
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://wa.me/94777495554" class="btn btn-primary">
+Book via WhatsApp
+</a>
+
+<a href="tel:0777495554" class="btn btn-secondary">
+Call 077 749 5554
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-slider">
+
+<div class="hero-slide">
+<img src="heroimage.jpeg" alt="">
+</div>
+
+<div class="hero-slide">
+<img src="heroimage2.jpeg" alt="">
+</div>
+
+<div class="hero-slide">
+<img src="heroimage3.jpeg" alt="">
+</div>
+
+<div class="hero-slide">
+<img src="heroimage4.jpeg" alt="">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>How Auto Angels Works</h2>
+
+<p>
+Simple, transparent and convenient from start to finish.
+</p>
+
+</div>
+
+<div class="steps-grid">
+
+<div class="step-card">
+<h3>1. Vehicle Handover</h3>
+<p>
+Your vehicle is handed over at your home, office or another convenient location.
+</p>
+</div>
+
+<div class="step-card">
+<h3>2. Initial Inspection</h3>
+<p>
+A quick inspection is carried out and repair requirements are discussed.
+</p>
+</div>
+
+<div class="step-card">
+<h3>3. Workshop Coordination</h3>
+<p>
+Your vehicle is taken to your preferred workshop or an Auto Angels partner workshop.
+</p>
+</div>
+
+<div class="step-card">
+<h3>4. Repair Updates</h3>
+<p>
+Customers are updated on repair costs and timelines before work proceeds.
+</p>
+</div>
+
+<div class="step-card">
+<h3>5. Vehicle Return</h3>
+<p>
+Once repairs are completed, the vehicle is returned safely back to the customer.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<p>
+Auto Angels © 2026. All rights reserved. A proud Sri Lankan venture.
+</p>
+
+</div>
+
+</footer>
+
+<script>
+
+function openMenu(){
+document.getElementById("menuOverlay").classList.add("active");
+}
+
+function closeMenu(){
+document.getElementById("menuOverlay").classList.remove("active");
+}
+
+</script>
 
 </body>
 </html>
